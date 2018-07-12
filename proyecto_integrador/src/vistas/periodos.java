@@ -233,21 +233,12 @@ public class periodos extends javax.swing.JFrame {
     private void btnAcep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcep1ActionPerformed
      Date date =jDateInicio.getDate();
      
-     long d =date.getTime();
-     Date fecha= new Date();
-     
-     JOptionPane.showMessageDialog(null,date);
-       
-     try {
-        String formato = jDateInicio.getDateFormatString();
-            
-//            SimpleDateFormat sdf = new SimpleDateFormat(formato);
-//           = String.valueOf(sdf.format(date));
-//
-            } catch (Exception e) {
-JOptionPane.showMessageDialog(null, "Al menos elija una FECHA VALIDA ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+     long da =date.getTime();
+        java.sql.Date fecha= new  java.sql.Date (da);
+        JOptionPane.showMessageDialog(null,date);
+    
 
-}
+
       
     }//GEN-LAST:event_btnAcep1ActionPerformed
 
@@ -258,6 +249,12 @@ JOptionPane.showMessageDialog(null, "Al menos elija una FECHA VALIDA ", "Error..
     private void BtnAcept2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAcept2ActionPerformed
         // TODO add your handling code here:
         Date date= jDateFin.getDate();
+        long d =date.getTime();
+        java.sql.Date fecha= new  java.sql.Date (d);
+        JOptionPane.showMessageDialog(null,date);
+    
+
+
     }//GEN-LAST:event_BtnAcept2ActionPerformed
 
     /**
