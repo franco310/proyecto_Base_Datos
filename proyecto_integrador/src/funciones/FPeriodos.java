@@ -18,15 +18,14 @@ public class FPeriodos  implements Serializable {
         try {
             
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?,?)";
-            lstP.add(new Parametro(1, periodos.getCodigo()));
-            lstP.add(new Parametro(2, periodos.getNombre()));
-            lstP.add(new Parametro(3, periodos.getFecha_inicio()));
-            lstP.add(new Parametro(4, periodos.getFecha_fin()));
-            lstP.add(new Parametro(5, periodos.getTipo()));
-            lstP.add(new Parametro(6, periodos.getObservaciones()));
-            lstP.add(new Parametro(7, periodos.getCodigo_sicoa()));
-            lstP.add(new Parametro(8, periodos.getEstado()));
+            String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?)";
+            lstP.add(new Parametro(1, periodos.getNombre()));
+            lstP.add(new Parametro(2, periodos.getFecha_inicio()));
+            lstP.add(new Parametro(3, periodos.getFecha_fin()));
+            lstP.add(new Parametro(4, periodos.getTipo()));
+            lstP.add(new Parametro(5, periodos.getObservaciones()));
+            lstP.add(new Parametro(6, periodos.getCodigo_sicoa()));
+            lstP.add(new Parametro(7, periodos.getEstado()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
                 if (rs.getString(0).equals("true"));
