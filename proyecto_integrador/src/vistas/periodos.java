@@ -234,8 +234,8 @@ public class periodos extends javax.swing.JFrame {
      Date date =jDateInicio.getDate();
      
      long da =date.getTime();
-        java.sql.Date fecha= new  java.sql.Date (da);
-        JOptionPane.showMessageDialog(null,date);
+     java.sql.Date fechaB= new  java.sql.Date (da);
+     JOptionPane.showMessageDialog(null,fechaB);
     
 
 
@@ -251,7 +251,7 @@ public class periodos extends javax.swing.JFrame {
         Date date= jDateFin.getDate();
         long d =date.getTime();
         java.sql.Date fecha= new  java.sql.Date (d);
-        JOptionPane.showMessageDialog(null,date);
+        JOptionPane.showMessageDialog(null,fecha);
     
 
 
