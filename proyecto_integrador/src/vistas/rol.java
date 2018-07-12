@@ -46,8 +46,6 @@ public class rol extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnListar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnNuevo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -60,6 +58,8 @@ public class rol extends javax.swing.JFrame {
         txtCodModulo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabladatos = new javax.swing.JTable();
+        btnEliminar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,20 +95,6 @@ public class rol extends javax.swing.JFrame {
             }
         });
 
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-
-        btnNuevo.setText("Nuevo ");
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Codigo");
 
         jLabel3.setText("Nombre");
@@ -132,6 +118,20 @@ public class rol extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabladatos);
 
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,10 +139,6 @@ public class rol extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(417, 417, 417)
-                        .addComponent(btnEliminar))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -164,18 +160,15 @@ public class rol extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(234, 234, 234)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnListar)
-                                    .addComponent(btnBuscar)
-                                    .addComponent(btnModificar)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnNuevo)
-                                .addGap(8, 8, 8)))))
+                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(234, 234, 234)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnListar)
+                            .addComponent(btnBuscar)
+                            .addComponent(btnModificar)
+                            .addComponent(btnEliminar)
+                            .addComponent(btnNuevo))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblrol, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
@@ -224,9 +217,9 @@ public class rol extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(btnNuevo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(4, 4, 4)
                         .addComponent(btnModificar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnListar)))
@@ -278,56 +271,6 @@ public class rol extends javax.swing.JFrame {
         }                     
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        // TODO add your handling code here:
-        if (btnNuevo.getText().compareTo("Nuevo")==0) {
-            limpiarControl();
-            btnNuevo.setText("Registrar");
-        }else{
-            if(btnNuevo.getText().compareTo("Registrar")==0){
-                try {
-                    Rol rol = new Rol();
-                    FRol frol = new FRol();
-                    rol.setNombre(txtNombre.getText());
-                    rol.setDescripcion(txtDescripcion.getText());
-                    rol.setEstado(Integer.parseInt(txtEstado.getText()));
-                    rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
-                    if(frol.Insertar(rol) ){
-                        limpiarControl();
-                        JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
-                            "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
-                        btnNuevo.setText("Nuevo");
-                    }
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        
-    }                
-    }//GEN-LAST:event_btnNuevoActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-          FRol frol = new FRol();
-        int confirmacion = JOptionPane.showConfirmDialog(this,
-            "¿Quiere eliminar el rol?", "Confirme",
-            JOptionPane.YES_NO_OPTION);
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            try {
-                if (frol.eliminar(rol) ) {
-                    JOptionPane.showMessageDialog(this,
-                        "Rol eliminado correctamente!!",
-                        "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
-                    limpiarControl();
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
           FRol frol = new FRol();
@@ -368,6 +311,56 @@ public class rol extends javax.swing.JFrame {
             r.getEstado(),r.getCodigo_modulo()});           
         } 
     }//GEN-LAST:event_btnListarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        FRol frol = new FRol();
+        int confirmacion = JOptionPane.showConfirmDialog(this,
+            "¿Quiere eliminar el rol?", "Confirme",
+            JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            try {
+                if (frol.eliminar(rol) ) {
+                    JOptionPane.showMessageDialog(this,
+                        "Rol eliminado correctamente!!",
+                        "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
+                    limpiarControl();
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        if (btnNuevo.getText().compareTo("Nuevo")==0) {
+            limpiarControl();
+            btnNuevo.setText("Registrar");
+        }else{
+            if(btnNuevo.getText().compareTo("Registrar")==0){
+                try {
+                    Rol rol = new Rol();
+                    FRol frol = new FRol();
+                    rol.setNombre(txtNombre.getText());
+                    rol.setDescripcion(txtDescripcion.getText());
+                    rol.setEstado(Integer.parseInt(txtEstado.getText()));
+                    rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
+                    if(frol.Insertar(rol) ){
+                        limpiarControl();
+                        JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
+                            "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
+                        btnNuevo.setText("Nuevo");
+                    }
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        
+    }             
+    }//GEN-LAST:event_btnNuevoActionPerformed
 
     /**
      * @param args the command line arguments
