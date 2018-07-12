@@ -104,6 +104,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnRoles.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnRoles.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnRoles.setVerifyInputWhenFocusTarget(false);
+        btnRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolesActionPerformed(evt);
+            }
+        });
 
         Btnperiodo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btnperiodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
@@ -190,6 +195,13 @@ else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
        obj.setVisible(true);
        dispose();
     }//GEN-LAST:event_BtnperiodoActionPerformed
+
+    private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
+        // TODO add your handling code here:
+        roles obj= new roles();
+       obj.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btnRolesActionPerformed
     
 
     /**
