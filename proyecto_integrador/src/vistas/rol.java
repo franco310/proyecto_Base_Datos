@@ -330,6 +330,7 @@ public class rol extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
+            
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
