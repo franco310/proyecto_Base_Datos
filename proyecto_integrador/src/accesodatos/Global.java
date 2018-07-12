@@ -36,7 +36,7 @@ public final class Global implements Serializable {
     public final static String MENSAJEERRORSESION = "Su sesi&oacute;n ha caducado, reinicie sesi&oacute;n ";
     public final static String MENSAJEERRORCLAVES = "Las claves no coinciden";
 
-    //Direcciones
+    ///Direcciones
     public final static String DOMINIO = "http://siget.unach.edu.ec/";
 
     //PublicacionesNoticias

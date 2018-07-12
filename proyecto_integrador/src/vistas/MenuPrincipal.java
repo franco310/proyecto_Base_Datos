@@ -198,7 +198,7 @@ else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
 
     private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
         // TODO add your handling code here:
-        roles obj= new roles();
+        rol obj= new rol();
        obj.setVisible(true);
        dispose();
     }//GEN-LAST:event_btnRolesActionPerformed

@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class Parametro implements Serializable {
 
-    private int posicion;
+     private int posicion;
     private Object valor;
     private int tipo;
 

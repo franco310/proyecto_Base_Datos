@@ -7,17 +7,17 @@ import java.io.Serializable;
  *
  * @author Franco-Pc
  */
-public class Roles implements Serializable{
+public class Rol implements Serializable{
   private  int codigo;
   private String nombre;
   private String descripcion;
   private int estado;
   private int codigo_modulo;  
 
-    public Roles() {
+    public Rol() {
     }
 
-    public Roles(int codigo, String nombre, String descripcion, int estado, int codigo_modulo) {
+    public Rol(int codigo, String nombre, String descripcion, int estado, int codigo_modulo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;

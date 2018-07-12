@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class AccesoDatos implements Serializable {
 
-    public static ConjuntoResultado ejecutaQuery(String query) throws Exception {
+      public static ConjuntoResultado ejecutaQuery(String query) throws Exception {
 
         ResultSet rs = null;
         PreparedStatement pst = null;
@@ -103,5 +103,6 @@ public class AccesoDatos implements Serializable {
             throw exCarga;
         }
         return conj;
+    
     }
 }

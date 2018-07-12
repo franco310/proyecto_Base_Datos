@@ -17,7 +17,7 @@ import java.sql.*;
  */
 public class ConjuntoResultado implements Serializable {
 
-    private String[] cabecera;
+     private String[] cabecera;
     private ArrayList<Object[]> Datos;
     private int indCol;
     private int indFil;
@@ -297,5 +297,6 @@ public class ConjuntoResultado implements Serializable {
      */
     public int getTamFil() {
         return tamFil;
+    
     }
 }
