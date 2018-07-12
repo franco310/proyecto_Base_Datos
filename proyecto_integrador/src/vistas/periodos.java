@@ -110,14 +110,15 @@ public class periodos extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Periodo1", "Periodo2", " " }));
+        jComboBoxTipo.setToolTipText("");
         jComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxTipoActionPerformed(evt);
             }
         });
 
-        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,6 +267,11 @@ public class periodos extends javax.swing.JFrame {
     private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoActionPerformed
         // TODO add your handling code here:
        jComboBoxTipo =new JComboBox();
+       jComboBoxTipo.addItem("Periodo1");
+       jComboBoxTipo.addItem("Periodo2");
+       
+       
+    
     }//GEN-LAST:event_jComboBoxTipoActionPerformed
 
     /**
