@@ -37,7 +37,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnUsuarios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnRoles = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Btnperiodo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,12 +105,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnRoles.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnRoles.setVerifyInputWhenFocusTarget(false);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
-        jButton1.setText("Periodo");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jButton1.setIconTextGap(25);
+        Btnperiodo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btnperiodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
+        Btnperiodo.setText("Periodo");
+        Btnperiodo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Btnperiodo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        Btnperiodo.setIconTextGap(25);
+        Btnperiodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnperiodoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
@@ -125,7 +130,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Btnperiodo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRoles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                         .addContainerGap())))
@@ -142,7 +147,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnRoles, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Btnperiodo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -178,9 +183,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if(posicion > -1){
             Animacion.Animacion.mover_izquierda(0,-188,2,2, panelMenu);
     }//GEN-LAST:event_unoActionPerformed
-    
 else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
 }}
+    private void BtnperiodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnperiodoActionPerformed
+       periodos obj= new periodos();
+       obj.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_BtnperiodoActionPerformed
+    
+
     /**
      * @param args the command line arguments
      */
@@ -224,9 +235,9 @@ else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btnperiodo;
     private javax.swing.JButton btnRoles;
     private javax.swing.JButton btnUsuarios;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
