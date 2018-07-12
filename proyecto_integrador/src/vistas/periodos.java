@@ -9,6 +9,7 @@ package vistas;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import entidades.Periodos;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -264,6 +265,7 @@ public class periodos extends javax.swing.JFrame {
 
     private void jComboBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoActionPerformed
         // TODO add your handling code here:
+       jComboBoxTipo =new JComboBox();
     }//GEN-LAST:event_jComboBoxTipoActionPerformed
 
     /**
