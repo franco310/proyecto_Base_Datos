@@ -6,7 +6,9 @@
 
 package vistas;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import entidades.Periodos;
 import javax.swing.JOptionPane;
 
 /**
@@ -229,9 +231,23 @@ public class periodos extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverActionPerformed
 
     private void btnAcep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcep1ActionPerformed
-//        Date date =jdcFecha.getDate();
-//        JOptionPane.showMessageDialog(null,date);
-        
+     Date date =jDateInicio.getDate();
+     
+     long d =date.getTime();
+     Date fecha= new Date();
+     
+     JOptionPane.showMessageDialog(null,date);
+       
+     try {
+        String formato = jDateInicio.getDateFormatString();
+            
+//            SimpleDateFormat sdf = new SimpleDateFormat(formato);
+//           = String.valueOf(sdf.format(date));
+//
+            } catch (Exception e) {
+JOptionPane.showMessageDialog(null, "Al menos elija una FECHA VALIDA ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+
+}
       
     }//GEN-LAST:event_btnAcep1ActionPerformed
 
@@ -241,7 +257,7 @@ public class periodos extends javax.swing.JFrame {
 
     private void BtnAcept2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAcept2ActionPerformed
         // TODO add your handling code here:
-//        Date date= jdcFecha.getDate();
+        Date date= jDateFin.getDate();
     }//GEN-LAST:event_BtnAcept2ActionPerformed
 
     /**
