@@ -16,8 +16,9 @@ public class FPeriodos  implements Serializable {
     public static boolean Insertar(Periodos periodos) throws Exception {
         boolean eje = false;
         try {
+            
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_insert_periodos(?,?,?,?,?,?,?,?)";
+            String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, periodos.getCodigo()));
             lstP.add(new Parametro(2, periodos.getNombre()));
             lstP.add(new Parametro(3, periodos.getFecha_inicio()));
@@ -54,7 +55,7 @@ public class FPeriodos  implements Serializable {
     public static ArrayList<Periodos> ObtenerPeriodos() throws Exception {
         ArrayList<Periodos> lst = new ArrayList<Periodos>();
         try {
-            String sql = "select * from master.f_select_periodos()";
+            String sql = "select * from actividades.obtener_periodos()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarPeriodos(rs);
             rs = null;
@@ -69,7 +70,7 @@ public class FPeriodos  implements Serializable {
         Periodos lst;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_select_periodos_dado_codigo(?)";
+            String sql = "select * from actividades.obtener_periodos_dado_codigo(?)";
             lstP.add(new Parametro(1, codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             lst = new Periodos();
@@ -85,7 +86,7 @@ public class FPeriodos  implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_update_periodos(?,?,?,?,?,?,?,?)";
+            String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, periodos.getNombre()));
             lstP.add(new Parametro(2, periodos.getFecha_inicio()));
             lstP.add(new Parametro(3, periodos.getFecha_fin()));
@@ -109,7 +110,7 @@ public class FPeriodos  implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_delete_periodos(?)";
+            String sql = "select * from actividades.elimina_periodo(?)";
             lstP.add(new Parametro(1, periodos.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {

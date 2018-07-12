@@ -18,7 +18,8 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_insert_usuario(?,?,?,?,?,?,?,?,?,?,?)";
+            
+            String sql = "select * from actividades.insertar_usuario(?,?,?,?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, usuario.getApellidos()));
             lstP.add(new Parametro(2, usuario.getNombres()));
             lstP.add(new Parametro(3, usuario.getIdentificacion()));
@@ -58,7 +59,7 @@ public class FUsuario implements Serializable {
     public static ArrayList<Usuario> ObtenerUsuario() throws Exception {
         ArrayList<Usuario> lst = new ArrayList<Usuario>();
         try {
-            String sql = "select * from master.f_select_usuario()";
+            String sql = "select * from actividades.obtener_usuario()";
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql);
             lst = llenarUsuario(rs);
             rs = null;
@@ -73,7 +74,7 @@ public class FUsuario implements Serializable {
         Usuario lst;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_select_usuario_dado_codigo(?)";
+            String sql = "select * from actividades.obtener_usuario_dado_codigo(?)";
             lstP.add(new Parametro(1, codigo));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             lst = new Usuario();
@@ -89,7 +90,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_update_usuario(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "select * from actividades.actualizar_usuario(?,?,?,?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, usuario.getApellidos()));
             lstP.add(new Parametro(2, usuario.getNombres()));
             lstP.add(new Parametro(3, usuario.getIdentificacion()));
@@ -117,7 +118,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from master.f_delete_usuario(?)";
+            String sql = "select * from actividades.elimina_usuario(?)";
             lstP.add(new Parametro(1, usuario.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
