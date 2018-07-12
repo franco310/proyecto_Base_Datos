@@ -16,6 +16,7 @@ public class FPeriodos  implements Serializable {
     public static boolean Insertar(Periodos periodos) throws Exception {
         boolean eje = false;
         try {
+            
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
             String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, periodos.getCodigo()));
