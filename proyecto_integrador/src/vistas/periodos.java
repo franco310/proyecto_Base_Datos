@@ -9,6 +9,8 @@ package vistas;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import entidades.Periodos;
+import funciones.FPeriodos;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -93,6 +95,12 @@ public class periodos extends javax.swing.JFrame {
         textFieldCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldCodigoActionPerformed(evt);
+            }
+        });
+
+        textFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNameActionPerformed(evt);
             }
         });
 
@@ -318,13 +326,32 @@ public class periodos extends javax.swing.JFrame {
 
     private void BtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoActionPerformed
         
-        
+//         limpiarControl();
+//        Habilitar();
+//        if (BtnNuevo.getText().compareTo("Nuevo")==0) {
+//            limpiarControl();
+//            BtnNuevo.setText("Registrar");
+//        }else{
+//            if(BtnNuevo.getText().compareTo("Registrar")==0){
+//                try {
+//                    Periodos periodos = new Periodos();
+//                    FPeriodos fperiodos = new FPeriodos();
+//                    periodos.setNombre(textFieldName.getText());
+//                }
+//                
+//                    
+//            
+//                   
         
         
         
         
         
     }//GEN-LAST:event_BtnNuevoActionPerformed
+
+    private void textFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNameActionPerformed
 
     /**
      * @param args the command line arguments
