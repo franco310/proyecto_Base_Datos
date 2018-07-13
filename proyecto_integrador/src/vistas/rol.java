@@ -44,8 +44,6 @@ public class rol extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        btnModificar = new javax.swing.JButton();
-        btnListar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -60,6 +58,8 @@ public class rol extends javax.swing.JFrame {
         tabladatos = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,12 +72,60 @@ public class rol extends javax.swing.JFrame {
 
         lblrol.setText("ROLES");
 
-        jLabel1.setText("Ingres codigo a buscar");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Ingrese codigo a buscar");
 
         btnBuscar.setText("Busca");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Codigo");
+
+        jLabel3.setText("Nombre");
+
+        jLabel4.setText("Descripcion");
+
+        jLabel5.setText("Estado");
+
+        jLabel6.setText("Codigo de modulo");
+
+        txtCodigo.setEnabled(false);
+
+        tabladatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Codigo", "Nombre", "Descripcion", "Estado", "Codigo de Modulo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabladatos);
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
             }
         });
 
@@ -95,55 +143,18 @@ public class rol extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Codigo");
-
-        jLabel3.setText("Nombre");
-
-        jLabel4.setText("Descripcion");
-
-        jLabel5.setText("Estado");
-
-        jLabel6.setText("Codigo de modulo");
-
-        tabladatos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Codigo", "Nombre", "Descripcion", "Estado", "Codigo de Modulo"
-            }
-        ));
-        jScrollPane1.setViewportView(tabladatos);
-
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-
-        btnNuevo.setText("Nuevo");
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 139, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
@@ -155,75 +166,81 @@ public class rol extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel4)
-                                        .addComponent(jLabel3))
-                                    .addGap(78, 78, 78)
+                                        .addComponent(jLabel3)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(9, 9, 9)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(37, 37, 37)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(234, 234, 234)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnListar)
                             .addComponent(btnBuscar)
-                            .addComponent(btnModificar)
                             .addComponent(btnEliminar)
-                            .addComponent(btnNuevo))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblrol, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVolver_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 139, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
+                            .addComponent(btnNuevo)
+                            .addComponent(btnModificar)
+                            .addComponent(btnListar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnVolver_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblrol, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblrol, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtBuscar)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel2))
+                                .addGap(42, 42, 42)
+                                .addComponent(lblrol, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(105, 105, 105)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(65, 65, 65)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jLabel4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(17, 17, 17))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addComponent(btnNuevo)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar)
                         .addGap(4, 4, 4)
+                        .addComponent(btnEliminar)
+                        .addGap(18, 18, 18)
                         .addComponent(btnModificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnListar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnListar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(btnBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -247,17 +264,19 @@ public class rol extends javax.swing.JFrame {
         // TODO add your handling code here:
         MenuPrincipal obj= new MenuPrincipal();
        obj.setVisible(true);
-        dispose();
+       dispose();
        
     }//GEN-LAST:event_btnVolver_menuActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
+        limpiarControl();
      FRol frol = new FRol();
         try {
-            limpiarControl();
+            
             rol = frol.ObtenerRolDadoCodigo(
                 Integer.parseInt(txtBuscar.getText()));
+             //limpiarControl();
             if (rol != null) {
                 txtCodigo.setText(Integer.toString(rol.getCodigo()));
                 txtNombre.setText(rol.getNombre());
@@ -266,51 +285,11 @@ public class rol extends javax.swing.JFrame {
                 txtCodModulo.setText(Integer.toString(rol.getCodigo_modulo()));
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Error al buscar el rol!!",
+            JOptionPane.showMessageDialog(this, "Error al  el rol no exite!!",
                 "Error", JOptionPane.ERROR_MESSAGE);
+             
         }                     
     }//GEN-LAST:event_btnBuscarActionPerformed
-
-    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
-          FRol frol = new FRol();
-         int confirmacion = JOptionPane.showConfirmDialog(this,
-            "¿Quiere modificar el rol?", "Confirme",
-            JOptionPane.YES_NO_OPTION);
-        if (confirmacion == JOptionPane.YES_OPTION) {
-            try {
-                rol.setCodigo(Integer.parseInt(txtCodigo.getText()));
-                rol.setNombre(txtNombre.getText());
-                rol.setDescripcion(txtDescripcion.getText());
-                rol.setEstado(Integer.parseInt(txtEstado.getText()));
-                rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
-                if(frol.actualizar(rol) ){
-                    JOptionPane.showMessageDialog(this,"Rol modificado correctamente!!",
-                        "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
-                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
-                    "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_btnModificarActionPerformed
-
-    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        // TODO add your handling code here:
-         DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();               
-        ArrayList<Rol> lista = new ArrayList<>();
-        try {
-            FRol frol = new FRol();
-            lista = frol.ObtenerRoles();            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(),"Error", 
-                    JOptionPane.ERROR_MESSAGE);
-        }
-        for(Rol r : lista){
-            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
-            r.getEstado(),r.getCodigo_modulo()});           
-        } 
-    }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
@@ -348,6 +327,7 @@ public class rol extends javax.swing.JFrame {
                     rol.setDescripcion(txtDescripcion.getText());
                     rol.setEstado(Integer.parseInt(txtEstado.getText()));
                     rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
+                     
                     if(frol.Insertar(rol) ){
                         limpiarControl();
                         JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
@@ -362,6 +342,50 @@ public class rol extends javax.swing.JFrame {
         
     }             
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        // TODO add your handling code here:
+         FRol frol = new FRol();
+         int confirmacion = JOptionPane.showConfirmDialog(this,
+            "¿Quiere modificar el rol?", "Confirme",
+            JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            try {
+                rol.setCodigo(Integer.parseInt(txtCodigo.getText()));
+                rol.setNombre(txtNombre.getText());
+                rol.setDescripcion(txtDescripcion.getText());
+                rol.setEstado(Integer.parseInt(txtEstado.getText()));
+                rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
+              
+                if(frol.actualizar(rol) ){
+                    JOptionPane.showMessageDialog(this,"Rol modificado correctamente!!",
+                        "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
+                     limpiarControl();
+                     
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();               
+        ArrayList<Rol> lista = new ArrayList<>();
+        try {
+            FRol frol = new FRol();
+            lista = frol.ObtenerRoles();            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error", 
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        for(Rol r : lista){
+            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
+            r.getEstado(),r.getCodigo_modulo()});           
+        } 
+    }//GEN-LAST:event_btnListarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -43,8 +43,6 @@ public class usuario extends javax.swing.JFrame {
         txtcodigo_salt.setText("");
         txtruta_firma.setText("");
         
-                
-        
     }
 
     /**
@@ -410,10 +408,10 @@ public class usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        FUsuario fususario = new FUsuario();
+        FUsuario fusuario = new FUsuario();
          try {
             limpiarControl();
-            usuario = fususario.ObtenerUsuarioDadoCodigo(
+            usuario = fusuario.ObtenerUsuarioDadoCodigo(
                 Integer.parseInt(txtbuscar.getText()));
             if (usuario != null) {
                 txtcodigo.setText(Long.toString(usuario.getCodigo()));
