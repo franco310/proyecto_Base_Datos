@@ -10,6 +10,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import entidades.Periodos;
 import funciones.FPeriodos;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -23,6 +28,9 @@ public class periodos extends javax.swing.JFrame {
     /** Creates new form periodos */
     public periodos() {
         initComponents();
+        Desabilitar();
+        Habilitar();
+    
     }
 
     private void limpiarControl() {
@@ -35,8 +43,30 @@ public class periodos extends javax.swing.JFrame {
         jTextArea1.setText("");
         jTextFieldSicoa.setText("");
     }
+     public void Desabilitar(){
+         textFieldCodigo.setEditable(false);
+        textFieldName.setEditable(false);
+        jDateInicio.setEnabled(false);
+        jDateFin.setEnabled(false);
+//        jComboBoxTipo.setUI();
+//        jComboBoxEstado.setTex("");
+        jTextArea1.setEditable(false);
+        jTextFieldSicoa.setEditable(false);  
+         
+         
+     }
     
-    
+    public void Habilitar(){
+        textFieldCodigo.requestFocus();
+        textFieldName.setEditable(true);
+        jDateInicio.setEnabled(true);
+        jDateFin.setEnabled(true);
+//        jComboBoxTipo.setUI();
+//        jComboBoxEstado.setTex("");
+        jTextArea1.setEditable(true);
+        jTextFieldSicoa.setEditable(true);  
+         
+     }
     
     
     
@@ -157,24 +187,6 @@ public class periodos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jDateInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99)
-                        .addComponent(jDateFin, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(98, 98, 98)
-                            .addComponent(jLabel4)
-                            .addGap(158, 158, 158)
-                            .addComponent(jLabel5)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -203,15 +215,12 @@ public class periodos extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel7)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(75, 75, 75)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(textFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(textFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(90, 90, 90))))
+                                .addGap(75, 75, 75)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(textFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(jLabel6)
@@ -222,7 +231,23 @@ public class periodos extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(jTextFieldSicoa, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(jLabel9)))
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(73, 73, 73)
+                            .addComponent(jDateInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(99, 99, 99)
+                            .addComponent(jDateFin, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(jLabel4)
+                                .addGap(158, 158, 158)
+                                .addComponent(jLabel5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(95, Short.MAX_VALUE))
@@ -326,20 +351,38 @@ public class periodos extends javax.swing.JFrame {
 
     private void BtnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoActionPerformed
         
-//         limpiarControl();
-//        Habilitar();
-//        if (BtnNuevo.getText().compareTo("Nuevo")==0) {
-//            limpiarControl();
-//            BtnNuevo.setText("Registrar");
-//        }else{
-//            if(BtnNuevo.getText().compareTo("Registrar")==0){
-//                try {
-//                    Periodos periodos = new Periodos();
-//                    FPeriodos fperiodos = new FPeriodos();
-//                    periodos.setNombre(textFieldName.getText());
-//                }
-//                
-//                    
+         limpiarControl();
+        Habilitar();
+        if (BtnNuevo.getText().compareTo("Nuevo")==0) {
+            limpiarControl();
+            BtnNuevo.setText("Registrar");
+        }else{
+            if(BtnNuevo.getText().compareTo("Registrar")==0){
+                try {
+                    Periodos periodos = new Periodos();
+                    FPeriodos fperiodos = new FPeriodos();
+                    periodos.setNombre(textFieldName.getText());
+                    periodos.setCodigo(Integer.parseInt(textFieldCodigo.getText()));
+                    periodos.setFecha_inicio(java.sql.Date.valueOf(getName()));
+                    periodos.setFecha_fin(java.sql.Date.valueOf(getName()));
+                    periodos.setTipo(Integer.parseInt(jComboBoxTipo.getItemAt(1-2)));
+                    periodos.setCodigo_sicoa(Integer.parseInt(jTextFieldSicoa.getText()));
+                    periodos.setEstado(Integer.parseInt(jComboBoxEstado.getItemAt(0-1)));
+                    periodos.setObservaciones(jTextArea1.getText());
+                    
+                        if (fperiodos.Insertar(periodos) ){
+                            limpiarControl();
+                            JOptionPane.showMessageDialog(this,"Ingreso correcto",
+                                    "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
+                            BtnNuevo.setText("Nuevo");
+                        }
+                    } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+        }
+                    
 //            
 //                   
         
@@ -389,6 +432,11 @@ public class periodos extends javax.swing.JFrame {
         });
     }
 
+    
+    Periodos periodos;
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAcept2;
     private javax.swing.JButton BtnEliminar;
