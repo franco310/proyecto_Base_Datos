@@ -46,7 +46,7 @@ public class periodos extends javax.swing.JFrame {
         jTextFieldSicoa.setText("");
     }
      public void Desabilitar(){
-         textFieldCodigo.setEditable(false);
+        textFieldCodigo.setEditable(true);
         textFieldName.setEditable(false);
         jDateInicio.setEnabled(false);
         jDateFin.setEnabled(false);
@@ -183,6 +183,11 @@ public class periodos extends javax.swing.JFrame {
         });
 
         BtnModificar.setText("Modificar");
+        BtnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarActionPerformed(evt);
+            }
+        });
 
         BtnEliminar.setText("Eliminar");
 
@@ -430,6 +435,37 @@ public class periodos extends javax.swing.JFrame {
              
         }                     
     }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void BtnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarActionPerformed
+        FPeriodos fPeriodos= new FPeriodos();
+        int confirmacion = JOptionPane.showConfirmDialog(this,
+                "DESEA MODIFCAR EL PERIODO","ACEPTE",
+                JOptionPane.YES_NO_OPTION);
+        if (confirmacion == JOptionPane.YES_NO_OPTION){
+
+            try{
+                periodos.setCodigo(Integer.parseInt(textFieldCodigo.getText()));
+                periodos.setNombre(textFieldName.getText());
+                periodos.setCodigo_sicoa(Integer.parseInt(jTextFieldSicoa.getText()));
+                periodos.setObservaciones(jTextArea1.getText());
+                
+                
+                if (fPeriodos.actualizar(periodos)){
+                    JOptionPane.showMessageDialog(this,"PERIODO MODIFICADO",
+                            "MODIFICACION EXITOSA",JOptionPane.INFORMATION_MESSAGE);
+                    
+                    limpiarControl();
+                    
+                }
+                
+        }catch (Exception ex ){
+            JOptionPane.showMessageDialog(this,"ERROR DESCONOCIDO : "+ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+            
+        }
+       
+    }//GEN-LAST:event_BtnModificarActionPerformed
 
     /**
      * @param args the command line arguments
