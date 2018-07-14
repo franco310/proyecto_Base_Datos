@@ -6,6 +6,8 @@
 package vistas;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
+import java.net.URI;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,11 +19,21 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-    public login() {
-        
+    public login() {  
         initComponents();
-         this.setSize(380, 370);
+      // this.setSize(380, 370);
+         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
+    }
+    public void OpenUnach(){
+    
+    try{Desktop.getDesktop().browse(URI.create("http://www.unach.edu.ec/"));
+    }catch(Exception e){
+        JOptionPane.showMessageDialog(this, e);
+    }
+    
+    
+    
     }
 
     /**
@@ -33,62 +45,127 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        lblMinimizat = new javax.swing.JLabel();
+        lblExit = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        lblUnach = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(null);
+        setLocation(new java.awt.Point(663, 379));
+        setMaximumSize(new java.awt.Dimension(663, 379));
+        setMinimumSize(new java.awt.Dimension(663, 379));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(663, 379));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/loogin.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 280, 369, 36);
-
+        lblUsuario.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         lblUsuario.setText("Usuario");
-        getContentPane().add(lblUsuario);
-        lblUsuario.setBounds(180, 110, 50, 15);
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 90, -1));
 
-        lblContraseña.setText("Contraseña");
-        getContentPane().add(lblContraseña);
-        lblContraseña.setBounds(160, 150, 80, 15);
+        lblContraseña.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        lblContraseña.setText("Password");
+        getContentPane().add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 120, -1));
 
+        txtUsuario.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(0, 0, 51));
+        txtUsuario.setText("Ingrese usuario");
+        txtUsuario.setBorder(null);
+        txtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtUsuarioMouseClicked(evt);
+            }
+        });
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(txtUsuario);
-        txtUsuario.setBounds(232, 106, 120, 30);
-        getContentPane().add(password);
-        password.setBounds(232, 144, 120, 30);
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 160, 20));
 
+        btnIngresar.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         btnIngresar.setText("Ingresar");
+        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar);
-        btnIngresar.setBounds(220, 200, 74, 20);
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 100, 30));
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/555wSrXU_400x400.jpg"))); // NOI18N
+        jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 380));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel1.setText("Login");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 130, 40));
+
+        lblMinimizat.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblMinimizat.setForeground(new java.awt.Color(0, 0, 51));
+        lblMinimizat.setText("  -");
+        lblMinimizat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblMinimizat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizatMouseClicked(evt);
             }
         });
-        getContentPane().add(btnSalir);
-        btnSalir.setBounds(300, 200, 55, 20);
+        getContentPane().add(lblMinimizat, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 20, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estudiantes.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 380, 310);
+        lblExit.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblExit.setForeground(new java.awt.Color(0, 0, 51));
+        lblExit.setText("X");
+        lblExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblExitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
+
+        password.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(0, 0, 51));
+        password.setText("jPasswordField1");
+        password.setBorder(null);
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passwordMouseClicked(evt);
+            }
+        });
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 160, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 260, 10));
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 260, 10));
+
+        lblUnach.setText("http://www.unach.edu.ec/");
+        lblUnach.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblUnach.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                lblUnachMouseMoved(evt);
+            }
+        });
+        lblUnach.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUnachMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblUnach, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 150, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,10 +191,41 @@ public class login extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
         // TODO add your handling code here:
-         System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
+        txtUsuario.setText(""); 
+    }//GEN-LAST:event_txtUsuarioMouseClicked
+
+    private void passwordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMouseClicked
+        // TODO add your handling code here:
+         password.setText("");
+    }//GEN-LAST:event_passwordMouseClicked
+
+    private void lblMinimizatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizatMouseClicked
+        // TODO add your handling code here:
+        this.setState(login.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizatMouseClicked
+
+    private void lblExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseClicked
+        // TODO add your handling code here:
+        int dialoogoButton=JOptionPane.YES_NO_OPTION;
+       int result =JOptionPane.showConfirmDialog(null,"Deseas salir del login?","EXIT",dialoogoButton);
+        if(result ==0)
+        {System.exit(0);
+        }
+    }//GEN-LAST:event_lblExitMouseClicked
+
+    private void lblUnachMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnachMouseMoved
+        // TODO add your handling code here:
+        
+        
+        
+    }//GEN-LAST:event_lblUnachMouseMoved
+
+    private void lblUnachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUnachMouseClicked
+        // TODO add your handling code here:
+        OpenUnach();
+    }//GEN-LAST:event_lblUnachMouseClicked
 
     /**
      * @param args the command line arguments
@@ -157,10 +265,14 @@ public class login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel lblContraseña;
+    private javax.swing.JLabel lblExit;
+    private javax.swing.JLabel lblMinimizat;
+    private javax.swing.JLabel lblUnach;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField txtUsuario;
