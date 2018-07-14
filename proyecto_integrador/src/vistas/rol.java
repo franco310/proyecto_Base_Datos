@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 /**
  *
  * @author Franco-Pc
@@ -26,8 +25,8 @@ public class rol extends javax.swing.JFrame {
      */
     public rol() {
         initComponents();
-        Desabilitar();
-        Habilitar();
+       // Desabilitar();
+        //Habilitar();
     
     }
  private void limpiarControl() {
@@ -38,7 +37,7 @@ public class rol extends javax.swing.JFrame {
         txtEstado.setText("");
         txtCodModulo.setText("");
     }
- public void Desabilitar(){
+ /*public void Desabilitar(){
         txtCodigo.setEditable(false);
         txtNombre.setEditable(false);
         txtDescripcion.setEditable(false);
@@ -52,7 +51,7 @@ public class rol extends javax.swing.JFrame {
         txtEstado.setEditable(true);
         txtCodModulo.setEditable(true);
         txtCodigo.requestFocus();
- }
+ }*/
  
 /* public void Llenar(){
      try{
@@ -458,10 +457,10 @@ public class rol extends javax.swing.JFrame {
     private void tabladatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabladatosMouseClicked
         // TODO add your handling code here:
         ////codigo para usar el maouse y aparezcan en los controles los datos
-        if(evt.getButton()==1){
+        /*if(evt.getButton()==1){
         int fila=tabladatos.getSelectedRow();
         try{
-            Habilitar(); 
+            //Habilitar(); 
             String sql ="select *from contactos where codigo= "+tabladatos.getValueAt(fila,0);
             ResultSet rs = sent.executeQuery(sql);
         rs.next();
@@ -474,7 +473,7 @@ public class rol extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
         }
-        
+        */
     }//GEN-LAST:event_tabladatosMouseClicked
 
     /**
