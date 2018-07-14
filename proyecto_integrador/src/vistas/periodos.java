@@ -187,6 +187,11 @@ public class periodos extends javax.swing.JFrame {
         BtnEliminar.setText("Eliminar");
 
         BtnBuscar.setText("jButton1");
+        BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -409,6 +414,22 @@ public class periodos extends javax.swing.JFrame {
     private void textFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldNameActionPerformed
+
+    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+         limpiarControl();
+     FPeriodos fperiodos = new FPeriodos();
+        try {
+            
+            
+            if (periodos != null) {
+                
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "ERROR EL PERIODO NO EXISTE",
+                "Error", JOptionPane.ERROR_MESSAGE);
+             
+        }                     
+    }//GEN-LAST:event_BtnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
