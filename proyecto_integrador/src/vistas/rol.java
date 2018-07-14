@@ -4,19 +4,12 @@
  * and open the template in the editor.
  */
 package vistas;
-//import accesodatos.AccesoDatos;
 import entidades.Rol;
 import funciones.FRol;
-import java.sql.Connection;
 import java.sql.ResultSet;
-//import java.sql.SQLException;
 import java.sql.Statement;
-//import java.sql.*;
 import java.util.ArrayList;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-//import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -27,7 +20,6 @@ import javax.swing.table.DefaultTableModel;
 public class rol extends javax.swing.JFrame {
   
         DefaultTableModel model;
-        Connection con;
         Statement sent;
     /**
      * Creates new form rol
@@ -39,6 +31,7 @@ public class rol extends javax.swing.JFrame {
     
     }
  private void limpiarControl() {
+        txtBuscar.setText("");
         txtCodigo.setText("");
         txtNombre.setText("");
         txtDescripcion.setText("");
@@ -60,7 +53,8 @@ public class rol extends javax.swing.JFrame {
         txtCodModulo.setEditable(true);
         txtCodigo.requestFocus();
  }
- public void Llenar(){
+ 
+/* public void Llenar(){
      try{
          //con=AccesoDatos.get();
          String[] titulos={"codigo","nombre","descripcion","estado","codigo_Modulo"};
@@ -83,7 +77,7 @@ public class rol extends javax.swing.JFrame {
 
  
  }
- 
+ */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -344,7 +338,6 @@ public class rol extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        limpiarControl();
      FRol frol = new FRol();
         try {
             rol = frol.ObtenerRolDadoCodigo(
@@ -387,10 +380,8 @@ public class rol extends javax.swing.JFrame {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-       // limpiarControl();
-        Habilitar();
-        if (btnNuevo.getText().compareTo("Nuevo")==0) {
-            //limpiarControl();
+       if (btnNuevo.getText().compareTo("Nuevo")==0) {
+            limpiarControl();
             btnNuevo.setText("Registrar");
         }else{
             if(btnNuevo.getText().compareTo("Registrar")==0){
@@ -401,9 +392,8 @@ public class rol extends javax.swing.JFrame {
                     rol.setDescripcion(txtDescripcion.getText());
                     rol.setEstado(Integer.parseInt(txtEstado.getText()));
                     rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
-                     
                     if(frol.Insertar(rol) ){
-                      //limpiarControl();
+                        limpiarControl();
                         JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
                             "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
                         btnNuevo.setText("Nuevo");
@@ -412,11 +402,8 @@ public class rol extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }
-              Llenar();
-              limpiarControl();
             }
-        
-    }             
+        }
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -448,6 +435,7 @@ public class rol extends javax.swing.JFrame {
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         // TODO add your handling code here:
+     
         DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();               
         ArrayList<Rol> lista = new ArrayList<>();
         try {
