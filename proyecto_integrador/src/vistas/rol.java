@@ -31,7 +31,7 @@ public class rol extends javax.swing.JFrame {
      */
     public rol() {
         initComponents();
-      Desabilitar();
+        Desabilitar();
         Habilitar();
     
     }
