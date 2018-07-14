@@ -186,7 +186,7 @@ public class periodos extends javax.swing.JFrame {
 
         BtnEliminar.setText("Eliminar");
 
-        BtnBuscar.setText("jButton1");
+        BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnBuscarActionPerformed(evt);
@@ -228,11 +228,11 @@ public class periodos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(textFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(textFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(31, 31, 31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(BtnBuscar))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -382,9 +382,9 @@ public class periodos extends javax.swing.JFrame {
                     periodos.setCodigo(Integer.parseInt(textFieldCodigo.getText()));
 //                    periodos.setFecha_inicio(java.sql.Date.valueOf(getName()));
 //                    periodos.setFecha_fin(java.sql.Date.valueOf(getName()));
-                    Item= jComboBoxTipo.getSelectedItem().toString();
+//                    Item= jComboBoxTipo.getSelectedItem().toString();
 //                    periodos.setTipo(Integer.parseInt(jComboBoxTipo.getItemAt(1-2)));
-//                    periodos.setCodigo_sicoa(Integer.parseInt(jTextFieldSicoa.getText()));
+                    periodos.setCodigo_sicoa(Integer.parseInt(jTextFieldSicoa.getText()));
 //                    Item= jComboBoxEstado.getSelectedItem().toString();
 //                    periodos.setEstado(Integer.parseInt(jComboBoxEstado.getItemAt(0-1)));
                     periodos.setObservaciones(jTextArea1.getText());
