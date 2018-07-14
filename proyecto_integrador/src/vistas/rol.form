@@ -76,7 +76,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/001-volver.png"/>
+          <Image iconType="3" name="/imagenes/vol.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Menu Principal"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -92,7 +92,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/eliminar.png"/>
+          <Image iconType="3" name="/imagenes/deleted.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -108,7 +108,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/003-diagnostico.png"/>
+          <Image iconType="3" name="/imagenes/diag.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -124,7 +124,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/edit_icon-icons.com_66118.png"/>
+          <Image iconType="3" name="/imagenes/edit.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Modificar"/>
         <Property name="horizontalAlignment" type="int" value="2"/>
@@ -315,7 +315,7 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/busqueda.png"/>
+              <Image iconType="3" name="/imagenes/busq.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
           </Properties>
