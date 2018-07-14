@@ -335,7 +335,6 @@ public class rol extends javax.swing.JFrame {
         limpiarControl();
      FRol frol = new FRol();
         try {
-            
             rol = frol.ObtenerRolDadoCodigo(
                 Integer.parseInt(txtBuscar.getText()));
              //limpiarControl();
@@ -349,7 +348,6 @@ public class rol extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error al  el rol no exite!!",
                 "Error", JOptionPane.ERROR_MESSAGE);
-             
         }                     
     }//GEN-LAST:event_btnBuscarActionPerformed
 
