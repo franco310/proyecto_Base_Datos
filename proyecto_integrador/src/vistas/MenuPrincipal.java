@@ -36,8 +36,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         btnUsuarios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnRoles = new javax.swing.JButton();
         Btnperiodo = new javax.swing.JButton();
+        btnRoles = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,18 +98,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("HOME");
 
-        btnRoles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnRoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-school-filled-50.png"))); // NOI18N
-        btnRoles.setText("Roles");
-        btnRoles.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnRoles.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnRoles.setVerifyInputWhenFocusTarget(false);
-        btnRoles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRolesActionPerformed(evt);
-            }
-        });
-
         Btnperiodo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btnperiodo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/calendario (1).png"))); // NOI18N
         Btnperiodo.setText("Periodo");
@@ -122,23 +110,30 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnRoles.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRoles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apoyar.png"))); // NOI18N
+        btnRoles.setText("Rol");
+        btnRoles.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRoles.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnRoles.setIconTextGap(25);
+        btnRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRolesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMenuLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                        .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Btnperiodo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRoles, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                        .addContainerGap())))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Btnperiodo, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(btnRoles, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,11 +144,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRoles, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(1, 1, 1)
+                .addComponent(btnRoles, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btnperiodo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(167, 167, 167))
         );
 
         jPanel1.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 180, 430));
@@ -198,9 +193,9 @@ else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
 
     private void btnRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRolesActionPerformed
         // TODO add your handling code here:
-        rol obj= new rol();
-       obj.setVisible(true);
-       dispose();
+        rol obj=new rol();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRolesActionPerformed
     
 
