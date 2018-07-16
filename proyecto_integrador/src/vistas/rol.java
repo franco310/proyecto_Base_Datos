@@ -349,6 +349,19 @@ private void limpiarControl() {
                         "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
                     limpiarControl();
                 }
+                DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
+        ArrayList<Rol> lista = new ArrayList<>();
+        try {
+           // FRol frol = new FRol();
+            lista = frol.ObtenerRoles();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
+        for(Rol r : lista){
+            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
+                r.getEstado(),r.getCodigo_modulo()});
+        }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -377,10 +390,24 @@ private void limpiarControl() {
                     limpiarControl();
 
                 }
+                DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
+        ArrayList<Rol> lista = new ArrayList<>();
+        try {
+            //FRol frol = new FRol();
+            lista = frol.ObtenerRoles();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
+        for(Rol r : lista){
+            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
+                r.getEstado(),r.getCodigo_modulo()});
+        }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
+            
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
@@ -400,6 +427,7 @@ private void limpiarControl() {
             modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
                 r.getEstado(),r.getCodigo_modulo()});
         }
+        
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnVolver_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver_menuActionPerformed
@@ -429,6 +457,20 @@ private void limpiarControl() {
                         JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
                             "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
                         btnNuevo.setText("Nuevo");
+                        DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
+        ArrayList<Rol> lista = new ArrayList<>();
+        try {
+           // FRol frol = new FRol();
+            lista = frol.ObtenerRoles();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
+        for(Rol r : lista){
+            
+            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
+                r.getEstado(),r.getCodigo_modulo()});
+        }
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
@@ -470,7 +512,6 @@ private void limpiarControl() {
         }
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
