@@ -9,6 +9,8 @@ import entidades.Rol;
 import funciones.FRol;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -70,6 +72,7 @@ private void limpiarControl() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(822, 546));
         setMinimumSize(new java.awt.Dimension(822, 546));
+        setUndecorated(true);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Rol", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -172,10 +175,7 @@ private void limpiarControl() {
 
         tabladatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Nombre", "Descripcion", "Estado", "Codigo Modulo"
@@ -258,8 +258,8 @@ private void limpiarControl() {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevo)
+                        .addGap(21, 21, 21)
                         .addComponent(btnEliminar)
                         .addGap(18, 18, 18)
                         .addComponent(btnModificar)
@@ -336,8 +336,7 @@ private void limpiarControl() {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-        FRol frol = new FRol();
+      FRol frol = new FRol();
         int confirmacion = JOptionPane.showConfirmDialog(this,
             "¿Quiere eliminar el rol?", "Confirme",
             JOptionPane.YES_NO_OPTION);
@@ -349,30 +348,17 @@ private void limpiarControl() {
                         "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
                     limpiarControl();
                 }
-                DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
-        ArrayList<Rol> lista = new ArrayList<>();
-        try {
-           // FRol frol = new FRol();
-            lista = frol.ObtenerRoles();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
-                JOptionPane.ERROR_MESSAGE);
-        }
-        for(Rol r : lista){
-            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
-                r.getEstado(),r.getCodigo_modulo()});
-        }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-
         }
+        llenar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
-        FRol frol = new FRol();
+       FRol frol = new FRol();
         int confirmacion = JOptionPane.showConfirmDialog(this,
             "¿Quiere modificar el rol?", "Confirme",
             JOptionPane.YES_NO_OPTION);
@@ -383,38 +369,26 @@ private void limpiarControl() {
                 rol.setDescripcion(txtDescripcion.getText());
                 rol.setEstado(Integer.parseInt(txtEstado.getText()));
                 rol.setCodigo_modulo(Integer.parseInt(txtCodModulo.getText()));
-
                 if(frol.actualizar(rol) ){
                     JOptionPane.showMessageDialog(this,"Rol modificado correctamente!!",
                         "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
-                    limpiarControl();
-
                 }
-                DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
-        ArrayList<Rol> lista = new ArrayList<>();
-        try {
-            //FRol frol = new FRol();
-            lista = frol.ObtenerRoles();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
-                JOptionPane.ERROR_MESSAGE);
-        }
-        for(Rol r : lista){
-            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
-                r.getEstado(),r.getCodigo_modulo()});
-        }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
+          
         }
+          llenar();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         // TODO add your handling code here:
+llenar();
+    }//GEN-LAST:event_btnListarActionPerformed
+public void llenar(){
 
-        DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
+   DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
         ArrayList<Rol> lista = new ArrayList<>();
         try {
             FRol frol = new FRol();
@@ -427,9 +401,7 @@ private void limpiarControl() {
             modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
                 r.getEstado(),r.getCodigo_modulo()});
         }
-        
-    }//GEN-LAST:event_btnListarActionPerformed
-
+}
     private void btnVolver_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver_menuActionPerformed
         // TODO add your handling code here:
         MenuPrincipal obj= new MenuPrincipal();
@@ -440,7 +412,7 @@ private void limpiarControl() {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-        if (btnNuevo.getText().compareTo("Nuevo")==0) {
+         if (btnNuevo.getText().compareTo("Nuevo")==0) {
             limpiarControl();
             btnNuevo.setText("Registrar");
         }else{
@@ -457,20 +429,6 @@ private void limpiarControl() {
                         JOptionPane.showMessageDialog(this,"Registrado correctamente!!",
                             "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
                         btnNuevo.setText("Nuevo");
-                        DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
-        ArrayList<Rol> lista = new ArrayList<>();
-        try {
-           // FRol frol = new FRol();
-            lista = frol.ObtenerRoles();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
-                JOptionPane.ERROR_MESSAGE);
-        }
-        for(Rol r : lista){
-            
-            modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
-                r.getEstado(),r.getCodigo_modulo()});
-        }
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
@@ -478,6 +436,7 @@ private void limpiarControl() {
                 }
             }
         }
+           llenar();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
