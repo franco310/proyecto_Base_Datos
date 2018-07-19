@@ -9,25 +9,23 @@ import java.sql.Timestamp;
  * @author Franco-Pc
  */
 public class Usuario implements Serializable{
-    private long codigo;
-    private String apellidos;
-    private String nombres;
-    private String identificacion;
-    private String nombre_corto;
-    private String clave;
-    private String clave_pregunta;
-    private String clave_respuesta;
-    private String mail;
-    private int estado;
-    private Timestamp primer_acceso;
-    private Timestamp  utimo_acceso;
-    private String ultima_ip;
-    private Timestamp fecha_modificacion;
-    private String codigo_salt;
-    private String ruta_firma;
+  private long codigo;
+  private String apellidos;
+  private String nombres;
+  private String identificacion;
+  private String nombre_corto;
+  private String clave;
+  private String clave_pregunta;
+  private String clave_respuesta;
+  private String mail;
+  private int estado;
+  private Timestamp  primer_acceso ;
+  private Timestamp utimo_acceso;
+  private String ultima_ip;
+  private Timestamp fecha_modificacion;
+  private String codigo_salt;
+  private String ruta_firma;
 
-    public Usuario() {
-    }
     public Usuario(long codigo, String apellidos, String nombres, String identificacion, String nombre_corto, String clave, String clave_pregunta, String clave_respuesta, String mail, int estado, Timestamp primer_acceso, Timestamp utimo_acceso, String ultima_ip, Timestamp fecha_modificacion, String codigo_salt, String ruta_firma) {
         this.codigo = codigo;
         this.apellidos = apellidos;
@@ -45,6 +43,9 @@ public class Usuario implements Serializable{
         this.fecha_modificacion = fecha_modificacion;
         this.codigo_salt = codigo_salt;
         this.ruta_firma = ruta_firma;
+    }
+
+    public Usuario() {
     }
 
     public long getCodigo() {
@@ -174,5 +175,5 @@ public class Usuario implements Serializable{
     public void setRuta_firma(String ruta_firma) {
         this.ruta_firma = ruta_firma;
     }
-    
+
 }

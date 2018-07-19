@@ -8,6 +8,10 @@ import java.sql.Date;
  * @author Franco-Pc
  */
 public class Periodos implements Serializable{
+
+    public static Date FechaDadoString(String format) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   private int codigo;
   private String nombre;
   private Date fecha_inicio;

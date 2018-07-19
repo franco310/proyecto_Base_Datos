@@ -186,7 +186,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 else{ Animacion.Animacion.mover_derecha(-188,0,2,2,panelMenu);
 }}
     private void BtnperiodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnperiodoActionPerformed
-       periodos obj= new periodos();
+       Periodo obj= new Periodo();
        obj.setVisible(true);
        dispose();
     }//GEN-LAST:event_BtnperiodoActionPerformed
