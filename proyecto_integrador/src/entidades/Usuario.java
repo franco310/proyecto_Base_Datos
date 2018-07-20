@@ -2,6 +2,7 @@
 package entidades;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -9,6 +10,9 @@ import java.sql.Timestamp;
  * @author Franco-Pc
  */
 public class Usuario implements Serializable{
+    public static Timestamp FechaDadoString(String format) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
   private long codigo;
   private String apellidos;
   private String nombres;
