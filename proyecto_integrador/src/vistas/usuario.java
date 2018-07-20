@@ -141,7 +141,7 @@ public class usuario extends javax.swing.JFrame {
         });
 
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/diag.png"))); // NOI18N
-        btnNuevo.setText("INSERTAR");
+        btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
@@ -416,7 +416,6 @@ public class usuario extends javax.swing.JFrame {
         MenuPrincipal obj =new MenuPrincipal();
         obj.setVisible(true);
         dispose();
-       
     }//GEN-LAST:event_btnVolver_menuActionPerformed
 
     private void txtnombre_cortoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombre_cortoActionPerformed
