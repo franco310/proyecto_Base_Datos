@@ -342,6 +342,9 @@
     <Component class="javax.swing.JTextField" name="txtnombre">
     </Component>
     <Component class="javax.swing.JTextField" name="txtcodigo">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtapellido">
     </Component>
@@ -487,10 +490,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtestado">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtprimer_acceso">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtultimo_acceso">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtultimo_accesoActionPerformed"/>
       </Events>
@@ -501,6 +513,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtulima_modificacion">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEliminar">
       <Properties>

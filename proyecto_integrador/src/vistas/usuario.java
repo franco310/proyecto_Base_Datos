@@ -94,6 +94,8 @@ public class usuario extends javax.swing.JFrame {
 
         jLabel4.setText("Identificacion:");
 
+        txtcodigo.setEnabled(false);
+
         jLabel5.setText("DATOS DEL USUARIO");
 
         jLabel6.setText("Nonmbre Corto:");
@@ -172,6 +174,11 @@ public class usuario extends javax.swing.JFrame {
 
         jLabel17.setText("Ultimo Acceso:");
 
+        txtestado.setEnabled(false);
+
+        txtprimer_acceso.setEnabled(false);
+
+        txtultimo_acceso.setEnabled(false);
         txtultimo_acceso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtultimo_accesoActionPerformed(evt);
@@ -179,6 +186,8 @@ public class usuario extends javax.swing.JFrame {
         });
 
         jLabel18.setText("Ultima Modificacion:");
+
+        txtulima_modificacion.setEnabled(false);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/deleted.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
