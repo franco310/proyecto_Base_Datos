@@ -18,7 +18,7 @@ public class FPeriodos  implements Serializable {
         try {
             
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.actualiza_periodo(?,?,?,?,?,?,?)";
+            String sql = "select * from actividades.insertar_periodos(?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, periodos.getNombre()));
             lstP.add(new Parametro(2, periodos.getFecha_inicio()));
             lstP.add(new Parametro(3, periodos.getFecha_fin()));
