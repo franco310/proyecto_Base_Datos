@@ -26,21 +26,7 @@ public class Periodo extends javax.swing.JFrame {
       // java.util.Date date= Sdf;
       
     }
-    private static SimpleDateFormat sdf =new SimpleDateFormat("yyy-MM-dd");
-    public static java.sql.Timestamp FechaDadoString(String fecha) {
-//   java.util.Date utilDate = new java.util.Date(fecha); //fecha actual
-        long lnMilisegundos = 0;
-        try {
-            java.util.Date date = sdf.parse(fecha);
-            lnMilisegundos = date.getTime();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(lnMilisegundos);
-        return sqlTimestamp;
-        //long lnMilisegundos = utilDate.getTime();
-    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -347,7 +333,21 @@ public class Periodo extends javax.swing.JFrame {
         txtCodigo_sicoa.setText("");
         txtEstado.setText("");
     }
- 
+     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public static java.sql.Timestamp FechaDadoString(String fecha) {
+        //java.util.Date utilDate = new java.util.Date(fecha); //fecha actual
+        long lnMilisegundos = 0;
+        try {
+            java.util.Date date = sdf.parse(fecha);
+            lnMilisegundos = date.getTime();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(lnMilisegundos);
+        return sqlTimestamp;
+        //long lnMilisegundos = utilDate.getTime();
+    }
     public void llenar(){
 DefaultTableModel modelo = (DefaultTableModel) TablaListarPeriodos.getModel();
         ArrayList<Periodos> lista = new ArrayList<>();
@@ -366,7 +366,7 @@ DefaultTableModel modelo = (DefaultTableModel) TablaListarPeriodos.getModel();
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         llenar();
     }//GEN-LAST:event_btnListarActionPerformed
-
+    
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         if (btnNuevo.getText().compareTo("Nuevo")==0) {
             limpiarControles();
@@ -378,12 +378,12 @@ DefaultTableModel modelo = (DefaultTableModel) TablaListarPeriodos.getModel();
                     FPeriodos fperiodos = new FPeriodos();
                     periodos.setNombre(txtNombre.getText());                    
                     try {
-                        periodos.setFecha_inicio(Periodos.FechaDadoString(sdf.format(spfecha_inicio.getDate())));
-                        periodos.setFecha_fin(Periodos.FechaDadoString(sdf.format(spfecha_fin.getDate())));
+                        periodos.setFecha_inicio(Periodo.FechaDadoString(sdf.format(spfecha_inicio.getDate())));
+                        periodos.setFecha_fin(Periodo.FechaDadoString(sdf.format(spfecha_fin.getDate())));
                     } catch (Exception ex) {
-                           JOptionPane.showMessageDialog(this, "Error en la fecha!!",
-                           "Error", JOptionPane.ERROR_MESSAGE);
-                    }                    
+                        JOptionPane.showMessageDialog(this, "Error en la fecha!!",
+                                "Error", JOptionPane.ERROR_MESSAGE);
+                    }                   
                     periodos.setTipo(Integer.parseInt(txtTipo.getText()));
                     periodos.setObservaciones(txtObservaciones.getText());
                     periodos.setCodigo_sicoa(Integer.parseInt(txtCodigo_sicoa.getText()));
@@ -415,12 +415,12 @@ DefaultTableModel modelo = (DefaultTableModel) TablaListarPeriodos.getModel();
                 periodos.setCodigo(Integer.parseInt(txtCodigo.getText()));
                 periodos.setNombre(txtNombre.getText());
                     try {
-                        periodos.setFecha_inicio(Periodos.FechaDadoString(sdf.format(spfecha_inicio.getDate())));
-                        periodos.setFecha_fin(Periodos.FechaDadoString(sdf.format(spfecha_fin.getDate())));
-                    } catch (Exception ex) {
-                           JOptionPane.showMessageDialog(this, "Error en la fecha!!",
-                           "Error", JOptionPane.ERROR_MESSAGE);
-                   }                
+                    periodos.setFecha_inicio(Periodo.FechaDadoString(sdf.format(spfecha_inicio.getDate())));
+                    periodos.setFecha_fin(Periodo.FechaDadoString(sdf.format(spfecha_fin.getDate())));
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this, "Error en la fecha!!",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }            
                 periodos.setTipo(Integer.parseInt(txtTipo.getText()));
                 periodos.setObservaciones(txtObservaciones.getText());
                 periodos.setCodigo_sicoa(Integer.parseInt(txtCodigo_sicoa.getText()));

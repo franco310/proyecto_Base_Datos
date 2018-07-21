@@ -104,7 +104,6 @@ public class FPeriodos  implements Serializable {
         }
         return eje;
     }
-
     public static boolean eliminar(Periodos periodos) throws Exception {
         boolean eje = false;
         try {

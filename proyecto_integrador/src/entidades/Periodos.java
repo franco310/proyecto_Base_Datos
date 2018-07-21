@@ -1,7 +1,7 @@
 
 package entidades;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -9,9 +9,7 @@ import java.sql.Date;
  */
 public class Periodos implements Serializable{
 
-    public static Date FechaDadoString(String format) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
   private int codigo;
   private String nombre;
   private Date fecha_inicio;
