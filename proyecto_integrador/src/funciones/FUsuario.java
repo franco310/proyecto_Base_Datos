@@ -18,7 +18,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from  actividades.insertar_usuario(?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "select * from  actividades.insertar_usuario(?,?,?,?,?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, usuario.getApellidos()));
             lstP.add(new Parametro(2, usuario.getNombres()));
             lstP.add(new Parametro(3, usuario.getIdentificacion()));
@@ -30,6 +30,7 @@ public class FUsuario implements Serializable {
             lstP.add(new Parametro(9, usuario.getUltima_ip()));
             lstP.add(new Parametro(10, usuario.getCodigo_salt()));
             lstP.add(new Parametro(11, usuario.getRuta_firma()));
+            lstP.add(new Parametro(12, usuario .getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
                 if (rs.getString(0).equals("true"));
@@ -90,23 +91,19 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.actualizar_usuario(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            lstP.add(new Parametro(1, usuario.getApellidos()));
-            lstP.add(new Parametro(2, usuario.getNombres()));
-            lstP.add(new Parametro(3, usuario.getIdentificacion()));
-            lstP.add(new Parametro(4, usuario.getNombre_corto()));
-            lstP.add(new Parametro(5, usuario.getClave()));
-            lstP.add(new Parametro(6, usuario.getClave_pregunta()));
-            lstP.add(new Parametro(7, usuario.getClave_respuesta()));
-            lstP.add(new Parametro(8, usuario.getMail()));
-            lstP.add(new Parametro(9, usuario.getEstado()));
-            lstP.add(new Parametro(10, usuario.getPrimer_acceso()));
-            lstP.add(new Parametro(11, usuario.getUtimo_acceso()));
-            lstP.add(new Parametro(12, usuario.getUltima_ip()));
-            lstP.add(new Parametro(13, usuario.getFecha_modificacion()));
-            lstP.add(new Parametro(14, usuario.getCodigo_salt()));
-            lstP.add(new Parametro(15, usuario.getRuta_firma()));
-            lstP.add(new Parametro(16, usuario.getCodigo()));
+            String sql = "select * from actividades.actualizar_usuario(?,?,?,?,?,?,?,?,?,?,?,?)";
+             lstP.add(new Parametro(1, usuario .getApellidos()));
+            lstP.add(new Parametro(2, usuario .getNombres()));
+            lstP.add(new Parametro(3, usuario .getIdentificacion()));
+            lstP.add(new Parametro(4, usuario .getNombre_corto()));
+            lstP.add(new Parametro(5, usuario .getClave()));
+            lstP.add(new Parametro(6, usuario .getClave_pregunta()));
+            lstP.add(new Parametro(7, usuario .getClave_respuesta()));
+            lstP.add(new Parametro(8, usuario .getMail()));
+            lstP.add(new Parametro(9, usuario .getUltima_ip()));
+            lstP.add(new Parametro(10, usuario .getCodigo_salt()));
+            lstP.add(new Parametro(11, usuario .getRuta_firma()));
+            lstP.add(new Parametro(12, usuario .getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
                 if (rs.getString(0).equals("true"));

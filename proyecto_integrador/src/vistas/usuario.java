@@ -478,11 +478,7 @@ public class usuario extends javax.swing.JFrame {
                     usuario.setClave(txtclave.getText());
                     usuario.setClave_pregunta(txtclave_pregunta.getText());
                     usuario.setClave_respuesta(txtclave_respuesta.getText());
-                    usuario.setMail(txtmail.getText());
-                    usuario.setCodigo(Integer.parseInt(txtestado.getText()));              
-                    txtprimer_acceso.setText(usuario.getPrimer_acceso().toString());
-                    txtultimo_acceso.setText(usuario.getUtimo_acceso().toString());
-                    txtulima_modificacion.setText(usuario.getFecha_modificacion().toString());
+                    usuario.setMail(txtmail.getText());            
                     usuario.setUltima_ip(txtultima_ip.getText());
                     usuario.setCodigo_salt(txtcodigo_salt.getText());
                     usuario.setRuta_firma(txtruta_firma.getText());
@@ -539,7 +535,7 @@ llenar();
             JOptionPane.YES_NO_OPTION);
         if (confirmacion == JOptionPane.YES_OPTION) {
             try {
-                    usuario.setCodigo(Integer.parseInt(txtcodigo.getText()));
+                  
                     usuario.setApellidos(txtapellido.getText());
                     usuario.setNombres(txtnombre.getText());
                     usuario.setIdentificacion(txtidentificacion.getText());
@@ -549,9 +545,6 @@ llenar();
                     usuario.setClave_respuesta(txtclave_respuesta.getText());
                     usuario.setMail(txtmail.getText());
                     usuario.setUltima_ip(txtestado.getText());
-                    txtprimer_acceso.setText(usuario.getPrimer_acceso().toString());
-                    txtultimo_acceso.setText(usuario.getUtimo_acceso().toString());
-                    txtulima_modificacion.setText(usuario.getFecha_modificacion().toString());
                     usuario.setCodigo_salt(txtcodigo_salt.getText());
                     usuario.setRuta_firma(txtruta_firma.getText());
                     
