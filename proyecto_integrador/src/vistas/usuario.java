@@ -4,7 +4,9 @@ package vistas;
 import entidades.Usuario;
 import funciones.FUsuario;;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class usuario extends javax.swing.JFrame {
 
@@ -25,6 +27,23 @@ public class usuario extends javax.swing.JFrame {
         java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(lnMilisegundos);
         return sqlTimestamp;
         //long lnMilisegundos = utilDate.getTime();
+    }
+    public void llenar(){
+    DefaultTableModel modelo = (DefaultTableModel) tabladatos.getModel();
+        ArrayList<Usuario> lista = new ArrayList<>();
+        try {
+            FUsuario fusuario = new FUsuario();
+            lista = fusuario.ObtenerUsuarios();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
+        for(Usuario u : lista){
+            modelo.addRow(new Object[]{ u.getCodigo(),u.getApellidos(),u.getNombres(),u.getIdentificacion(),
+                u.getNombre_corto(),u.getClave(),u.getClave_pregunta(),u.getClave_respuesta(),
+                u.getMail(),u.getEstado(),u.getPrimer_acceso(),u.getUtimo_acceso(),u.getUltima_ip(),
+                u.getFecha_modificacion(),u.getCodigo_salt(),u.getRuta_firma()});
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -73,6 +92,8 @@ public class usuario extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         btnLimpiarControl = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabladatos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Datos Del Usuario");
@@ -203,6 +224,25 @@ public class usuario extends javax.swing.JFrame {
             }
         });
 
+        tabladatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Apellidos", "Nombres", "Identificacion", "Nombre corto", "Clave", "Clave pregunta", "Clave respuesta", "Mail", "Estado", "Primer acceso", "Ultimo acceso", "Ultima ip", "Fecha modificacion", "Codigo salt", "Ruta firma"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabladatos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jScrollPane3.setViewportView(tabladatos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -292,7 +332,7 @@ public class usuario extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(55, 55, 55)
                 .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(579, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,19 +340,22 @@ public class usuario extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(335, 335, 335))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(btnmodificar)
-                .addGap(53, 53, 53)
-                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(btnlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnVolver_menu)
-                .addGap(18, 18, 18)
-                .addComponent(btnLimpiarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnmodificar)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnlistar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVolver_menu)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,7 +440,9 @@ public class usuario extends javax.swing.JFrame {
                     .addComponent(btnlistar)
                     .addComponent(btnVolver_menu)
                     .addComponent(btnLimpiarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(190, 240, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -484,7 +529,7 @@ public class usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtruta_firmaActionPerformed
 
     private void btnlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistarActionPerformed
-       
+llenar();
     }//GEN-LAST:event_btnlistarActionPerformed
 
     private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
@@ -636,6 +681,8 @@ public class usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable tabladatos;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtclave;
