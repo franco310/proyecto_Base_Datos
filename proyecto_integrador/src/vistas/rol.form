@@ -77,7 +77,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btngenera" min="-2" pref="129" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
           </Group>
@@ -95,6 +97,7 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtBuscar" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                                       <Component id="btnBuscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="btngenera" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnNuevo" min="-2" pref="34" max="-2" attributes="0"/>
@@ -478,6 +481,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="btngenera">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="generera reporte"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btngeneraActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
