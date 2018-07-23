@@ -111,7 +111,8 @@ private void limpiarControl() {
         jLabel6.setText("Codigo de Módulo");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/escoba.png"))); // NOI18N
-        jButton1.setText("LIMPIAR");
+        jButton1.setText("Limpiar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -187,6 +188,7 @@ private void limpiarControl() {
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/busq.png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
@@ -195,6 +197,7 @@ private void limpiarControl() {
 
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/diag.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
+        btnNuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNuevo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +208,7 @@ private void limpiarControl() {
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edit.png"))); // NOI18N
         btnModificar.setText("Modificar");
+        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnModificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -215,6 +219,7 @@ private void limpiarControl() {
 
         btnListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/list.png"))); // NOI18N
         btnListar.setText("Listar");
+        btnListar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnListar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnListar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnListar.addActionListener(new java.awt.event.ActionListener() {
@@ -225,6 +230,7 @@ private void limpiarControl() {
 
         btnVolver_menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vol.png"))); // NOI18N
         btnVolver_menu.setText("Volver");
+        btnVolver_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver_menu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnVolver_menu.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnVolver_menu.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +241,7 @@ private void limpiarControl() {
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/deleted.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -244,6 +251,7 @@ private void limpiarControl() {
         });
 
         btngenera.setText("Generar Reporte");
+        btngenera.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btngenera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btngeneraActionPerformed(evt);
