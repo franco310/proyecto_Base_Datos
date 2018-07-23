@@ -535,7 +535,7 @@ public class Periodo extends javax.swing.JFrame {
     private void lblExit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit1MouseClicked
         // TODO add your handling code here:
         int dialoogoButton=JOptionPane.YES_NO_OPTION;
-        int result =JOptionPane.showConfirmDialog(null,"Deseas salir del Menú Principal?","EXIT",dialoogoButton);
+        int result =JOptionPane.showConfirmDialog(null,"Deseas salir ?","EXIT",dialoogoButton);
         if(result ==0)
         {System.exit(0);
         }
