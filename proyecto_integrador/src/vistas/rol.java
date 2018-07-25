@@ -533,6 +533,7 @@ private void limpiarControl() {
                     JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                 llenar();
             }
         }
         llenar();
@@ -571,9 +572,9 @@ private void limpiarControl() {
                 JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-
+            llenar();
         }
-        llenar();
+       
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -593,8 +594,9 @@ private void limpiarControl() {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el rol!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
+            llenar();
         }
-        llenar();
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

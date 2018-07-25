@@ -110,7 +110,7 @@ public class usuario extends javax.swing.JFrame {
         btnNuevo = new javax.swing.JButton();
         btnlistar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnGeneraReportes = new javax.swing.JButton();
         btnVolver_menu = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tabladatos = new javax.swing.JTable();
@@ -284,13 +284,11 @@ public class usuario extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblExit1)
-                            .addComponent(lblMinimizat1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblExit1)
+                        .addComponent(lblMinimizat1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 51));
@@ -430,11 +428,11 @@ public class usuario extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Genera Reporte");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGeneraReportes.setText("Genera Reporte");
+        btnGeneraReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGeneraReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGeneraReportesActionPerformed(evt);
             }
         });
 
@@ -462,7 +460,7 @@ public class usuario extends javax.swing.JFrame {
                     .addComponent(btnbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnlistar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGeneraReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnmodificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnVolver_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -484,7 +482,7 @@ public class usuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnmodificar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGeneraReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnVolver_menu)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -666,6 +664,7 @@ public class usuario extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }
+                llenar();
             }
         }
         
@@ -687,6 +686,7 @@ public class usuario extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el usuario!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
+            llenar();
         }
         
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -731,7 +731,7 @@ llenar();
                 JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-          
+            llenar();
         }
          
     }//GEN-LAST:event_btnmodificarActionPerformed
@@ -785,7 +785,7 @@ llenar();
         }
     }//GEN-LAST:event_btnbuscarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGeneraReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneraReportesActionPerformed
         // TODO add your handling code here:
          try{
             Reportes re=new Reportes();
@@ -796,7 +796,7 @@ llenar();
         }
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGeneraReportesActionPerformed
 
     private void lblExit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExit1MouseClicked
         // TODO add your handling code here:
@@ -852,13 +852,13 @@ llenar();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGeneraReportes;
     private javax.swing.JButton btnLimpiarControl;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnVolver_menu;
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnlistar;
     private javax.swing.JButton btnmodificar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;

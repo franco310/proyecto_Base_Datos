@@ -288,16 +288,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblExit1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblMinimizat1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblExit1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMinimizat1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel20" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -626,7 +623,7 @@
                           <Component id="btnbuscar" pref="132" max="32767" attributes="0"/>
                           <Component id="btnNuevo" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnlistar" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton1" max="32767" attributes="0"/>
+                          <Component id="btnGeneraReportes" max="32767" attributes="0"/>
                           <Component id="btnmodificar" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnVolver_menu" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -652,7 +649,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnmodificar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="btnGeneraReportes" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnVolver_menu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -744,7 +741,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmodificarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnGeneraReportes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Genera Reporte"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -752,7 +749,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGeneraReportesActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnVolver_menu">
