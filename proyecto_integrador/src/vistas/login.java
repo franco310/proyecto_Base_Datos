@@ -61,10 +61,8 @@ public class login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(663, 379));
-        setMaximumSize(new java.awt.Dimension(663, 379));
         setMinimumSize(new java.awt.Dimension(663, 379));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(663, 379));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -77,7 +75,6 @@ public class login extends javax.swing.JFrame {
 
         txtUsuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(0, 0, 51));
-        txtUsuario.setText("Ingrese usuario");
         txtUsuario.setBorder(null);
         txtUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -122,7 +119,6 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(lblMinimizat, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 20, 20));
 
-        lblExit.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblExit.setForeground(new java.awt.Color(0, 0, 51));
         lblExit.setText("X");
         lblExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -135,7 +131,6 @@ public class login extends javax.swing.JFrame {
 
         password.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         password.setForeground(new java.awt.Color(0, 0, 51));
-        password.setText("jPasswordField1");
         password.setBorder(null);
         password.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         password.addMouseListener(new java.awt.event.MouseAdapter() {
