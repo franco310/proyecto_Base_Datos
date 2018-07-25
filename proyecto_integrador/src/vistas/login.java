@@ -67,15 +67,15 @@ public class login extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(663, 379));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblUsuario.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        lblUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblUsuario.setText("Usuario");
         getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 90, -1));
 
-        lblContraseña.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        lblContraseña.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblContraseña.setText("Password");
         getContentPane().add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 120, -1));
 
-        txtUsuario.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(0, 0, 51));
         txtUsuario.setText("Ingrese usuario");
         txtUsuario.setBorder(null);
@@ -92,7 +92,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 160, 20));
 
-        btnIngresar.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        btnIngresar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnIngresar.setText("Ingresar");
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,13 +100,13 @@ public class login extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 100, 30));
+        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 120, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/555wSrXU_400x400.jpg"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 380));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("Login");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 130, 40));
@@ -133,7 +133,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(lblExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
 
-        password.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        password.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         password.setForeground(new java.awt.Color(0, 0, 51));
         password.setText("jPasswordField1");
         password.setBorder(null);
@@ -145,15 +145,15 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 160, -1));
 
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 51));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 260, 10));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 260, 30));
 
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 102));
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 51));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 260, 10));
+        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 260, 30));
 
-        lblUnach.setText("http://www.unach.edu.ec/");
+        lblUnach.setText("www.unach.edu.ec");
         lblUnach.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblUnach.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -165,7 +165,7 @@ public class login extends javax.swing.JFrame {
                 lblUnachMouseClicked(evt);
             }
         });
-        getContentPane().add(lblUnach, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 150, 20));
+        getContentPane().add(lblUnach, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 110, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +176,8 @@ public class login extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
-         String Usuario="f";
+         String Usuario="administrador";
+         
          String Contraseña="123";
        
        String Pass = new String(password.getPassword());
@@ -187,7 +188,8 @@ public class login extends javax.swing.JFrame {
            dispose();
            
        }else{
-           JOptionPane.showMessageDialog(this, "Usuario / Contraseña incorrecta");
+           JOptionPane.showMessageDialog(this, "Usuario o Contraseña no válidos.¿Olvidaste tu contraseña?");
+            
        }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
