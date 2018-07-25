@@ -686,9 +686,9 @@ public class usuario extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error al eliminar el usuario!!",
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-            llenar();
+            
         }
-        
+        llenar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtultimo_accesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtultimo_accesoActionPerformed
@@ -731,9 +731,9 @@ llenar();
                 JOptionPane.showMessageDialog(this,"Error desconocido: "+ex.getMessage(),
                     "Error", JOptionPane.ERROR_MESSAGE);
             }
-            llenar();
+           
         }
-         
+          llenar();
     }//GEN-LAST:event_btnmodificarActionPerformed
 
     private void btnLimpiarControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarControlActionPerformed
