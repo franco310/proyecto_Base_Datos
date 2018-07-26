@@ -245,7 +245,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/siget3.jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 656, 419));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 660, 419));
 
         jPanel4.setBackground(new java.awt.Color(204, 102, 0));
 
