@@ -138,7 +138,7 @@ public class login extends javax.swing.JFrame {
                 passwordMouseClicked(evt);
             }
         });
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 160, -1));
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 216, 160, 20));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 51));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));

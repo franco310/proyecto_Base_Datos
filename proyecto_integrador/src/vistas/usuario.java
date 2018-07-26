@@ -247,7 +247,6 @@ public class usuario extends javax.swing.JFrame {
         jLabel20.setText("UNIVERSIDAD NACIONAL DE CHIMBORAZO");
 
         lblExit1.setBackground(new java.awt.Color(255, 255, 255));
-        lblExit1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblExit1.setForeground(new java.awt.Color(255, 255, 255));
         lblExit1.setText("X");
         lblExit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -314,7 +313,7 @@ public class usuario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel4.setBackground(new java.awt.Color(204, 102, 0));
 
         jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
@@ -457,7 +456,7 @@ public class usuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                    .addComponent(btnbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnlistar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGeneraReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

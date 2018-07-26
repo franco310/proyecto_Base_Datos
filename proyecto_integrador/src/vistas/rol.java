@@ -352,7 +352,6 @@ private void limpiarControl() {
         jLabel8.setText("UNIVERSIDAD NACIONAL DE CHIMBORAZO");
 
         lblExit1.setBackground(new java.awt.Color(255, 255, 255));
-        lblExit1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         lblExit1.setForeground(new java.awt.Color(255, 255, 255));
         lblExit1.setText("X");
         lblExit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -422,7 +421,7 @@ private void limpiarControl() {
                 .addContainerGap())
         );
 
-        jPanel6.setBackground(new java.awt.Color(255, 153, 0));
+        jPanel6.setBackground(new java.awt.Color(204, 102, 0));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
