@@ -102,7 +102,7 @@ public class FRol  implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.elimina_roles(?)";
+            String sql = "select * from actividades.eliminar_roles_p(?)";
             lstP.add(new Parametro(1, rol.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {

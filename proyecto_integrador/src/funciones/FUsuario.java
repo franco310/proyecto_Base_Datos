@@ -119,7 +119,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.elimina_usuario(?)";
+            String sql = "select * from actividades.eliminar_usuario_usuario_rol_tutor(?)";
             lstP.add(new Parametro(1, usuario.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {

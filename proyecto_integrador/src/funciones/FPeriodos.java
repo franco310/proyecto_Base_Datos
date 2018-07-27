@@ -108,7 +108,7 @@ public class FPeriodos  implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.elimina_periodo(?)";
+            String sql = "select * from actividades.eliminar_periodo(?)";
             lstP.add(new Parametro(1, periodos.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
