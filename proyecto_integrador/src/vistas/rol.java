@@ -613,6 +613,7 @@ private void limpiarControl() {
         txtDescripcion.setText("");
         txtEstado.setText("");
         txtCodModulo.setText("");
+        txtBuscar.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
@@ -643,6 +644,10 @@ public void llenar(){
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
                 JOptionPane.ERROR_MESSAGE);
         }
+         int filas=tabladatos.getRowCount()-1;
+            for(int i=filas; i>=0; i--){
+                modelo.removeRow(modelo.getRowCount()-1);
+            } 
         for(Rol r : lista){
             modelo.addRow(new Object[]{ r.getCodigo(),r.getNombre(),r.getDescripcion(),
                 r.getEstado(),r.getCodigo_modulo()});

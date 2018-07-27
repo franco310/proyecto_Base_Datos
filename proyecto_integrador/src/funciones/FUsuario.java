@@ -18,7 +18,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from  actividades.insertar_usuario(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "select *from actividades.insertar_usuario(?,?,?,?,?,?,?,?,?,?,?)";
             lstP.add(new Parametro(1, usuario.getApellidos()));
             lstP.add(new Parametro(2, usuario.getNombres()));
             lstP.add(new Parametro(3, usuario.getIdentificacion()));
@@ -30,7 +30,7 @@ public class FUsuario implements Serializable {
             lstP.add(new Parametro(9, usuario.getUltima_ip()));
             lstP.add(new Parametro(10, usuario.getCodigo_salt()));
             lstP.add(new Parametro(11, usuario.getRuta_firma()));
-            lstP.add(new Parametro(12, usuario .getCodigo()));
+           // lstP.add(new Parametro(12, usuario .getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {
                 if (rs.getString(0).equals("true"));
@@ -119,7 +119,7 @@ public class FUsuario implements Serializable {
         boolean eje = false;
         try {
             ArrayList<Parametro> lstP = new ArrayList<Parametro>();
-            String sql = "select * from actividades.eliminar_usuario_usuario_rol_tutor(?)";
+            String sql = "select *from actividades.eliminar_usuario_usuario_rol_tutor(?)";
             lstP.add(new Parametro(1, usuario.getCodigo()));
             ConjuntoResultado rs = AccesoDatos.ejecutaQuery(sql, lstP);
             while (rs.next()) {

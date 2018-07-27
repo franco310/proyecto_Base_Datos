@@ -46,6 +46,10 @@ public class usuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",
                 JOptionPane.ERROR_MESSAGE);
         }
+         int filas=tabladatos.getRowCount()-1;
+            for(int i=filas; i>=0; i--){
+                modelo.removeRow(modelo.getRowCount()-1);
+            } 
         for(Usuario  u : lista){
             modelo.addRow(new Object[]{ u.getCodigo(),u.getApellidos(),u.getNombres(),u.getIdentificacion(),
             u.getNombre_corto(),u.getClave(),u.getClave_pregunta(),u.getClave_respuesta(),u.getMail(),
@@ -750,6 +754,7 @@ llenar();
         txtulima_modificacion.setText("");
         txtcodigo_salt.setText("");
         txtruta_firma.setText("");
+        txtbuscar.setText("");
     }//GEN-LAST:event_btnLimpiarControlActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
